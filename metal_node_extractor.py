@@ -44,7 +44,7 @@ def read_cif(cif):
 	unit_cell = atoms.get_cell()
 
 	neighborlist.primitive_neighbor_list
-	NL = neighborlist.NewPrimitiveNeighborList(cutoffs, use_scaled_positions=True, self_interaction=False)
+	NL = neighborlist.NewPrimitiveNeighborList(cutoffs, use_scaled_positions=True, self_interaction=False, skin=0.1)
 	NL.build([True, True, True], unit_cell, atoms.get_scaled_positions())
 
 	G = nx.Graph()

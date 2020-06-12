@@ -41,7 +41,7 @@ def atoms2graph(atoms):
 
 	unit_cell = atoms.get_cell()
 	cutoffs = neighborlist.natural_cutoffs(atoms)
-	NL = neighborlist.NewPrimitiveNeighborList(cutoffs, self_interaction=False) # default atom cutoffs work well
+	NL = neighborlist.NewPrimitiveNeighborList(cutoffs, self_interaction=False, skin=0.1) # default atom cutoffs work well
 	NL.build([False, False, False], unit_cell, atoms.positions)
 
 	G = nx.Graph()
