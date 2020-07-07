@@ -1,16 +1,14 @@
 import re
-import glob
 import networkx as nx
 import numpy as np
 from datetime import datetime
 from numpy import cross, eye, dot
 from scipy.linalg import expm, norm
-from ase.io import read, write
+from ase.io import read
 from ase import neighborlist, Atom
 from itertools import chain
 
 def flatten(L):
-
 	return list(chain(*L))
 
 def nl(string):
